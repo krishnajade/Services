@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">UserProfileLastLogin</string>
+    <string name="title_activity_user_profile">UserProfileActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="Contact_us_form_title">Please fill out the form below and we will get back to you as soon as possible</string>
+    <string name="or">OR</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="mobile_no_email_id_user_id">Mobile No/Email Id/User Id</string>
+    <string name="password">Password</string>
+    <string name="accept_terms_amp_conditions"><![CDATA[Accept terms & conditions]]></string>
+    <string name="login">LOGIN</string>
+    <string name="login_with_otp">LOGIN WITH OTP</string>
+    <string name="don_t_have_account_createaccount">Don\'t have account? Createaccount</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="username">Username</string>
+    <string name="email">EMail</string>
+    <string name="contact_no">Contact No.</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="enter_password">Enter Password</string>
+
+    <string name="Female">Female</string>
+    <string name="Male">Male</string>
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
+    <string name="user_info">User Info</string>
+    <string name="sign_up1">Sign Up</string>
+    <string name="username1">Username</string>
+    <string name="email1">Email</string>
+    <string name="contact_number1">Contact Number</string>
+    <string name="password1">Password</string>
+    <string name="gender1">Gender</string>
+    <string name="male1">Male</string>
+    <string name="female1">Female</string>
+    <string name="submit1">Submit</string>
+</resources>
