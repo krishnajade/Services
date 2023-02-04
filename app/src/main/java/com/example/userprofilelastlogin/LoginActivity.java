@@ -23,7 +23,6 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText mUsernameEditText;
     private EditText mPasswordEditText;
-    private TextView signup;
 
 
     public boolean isNetworkConnected() {
@@ -63,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
                 // The check box is checked
                 // Add your logic here
                 //Login button functionality
-                Button loginButton = findViewById(R.id.loginbutton);
+                Button loginButton = findViewById(R.id.login_button);
                 loginButton.setOnClickListener(view -> {
                     // retrieve the username and password from the text fields
 
@@ -104,7 +103,7 @@ public class LoginActivity extends AppCompatActivity {
             }
     }
     );
-        signup=findViewById(R.id.dont_have_account);
+        TextView signup = findViewById(R.id.dont_have_account);
         signup.setOnClickListener(view->{
             Intent intent=new Intent(getApplicationContext(),SignUpActivity.class);
             startActivity(intent);
