@@ -44,4 +44,22 @@
     <string name="male1">Male</string>
     <string name="female1">Female</string>
     <string name="submit1">Submit</string>
+    <string name="registration">Registration</string>
+    <string name="residential_address">Residential Address</string>
+    <string name="permanent_address">Permanent Address</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="enter_your_aadhar_number">Enter your Aadhar number</string>
+    <string name="upload_aadhar">Upload aadhar</string>
+    <string name="enter_your_pancard_number">Enter your pancard number</string>
+    <string name="upload_pancard">Upload Pancard</string>
+    <string name="upload_education_certificate">Upload Education Certificate</string>
+    <string-array name="qualification_array">
+        <item>Qualification</item>
+        <item>B.A.</item>
+        <item>B.Com</item>
+        <item>BCA</item>
+        <item>B.Sc.</item>
+    </string-array>
+
 </resources>

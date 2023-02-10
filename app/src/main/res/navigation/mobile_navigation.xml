@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.example.userprofilelastlogin.ui.gallery.GalleryFragment"
+        android:name="com.example.userprofilelastlogin.ui.Registration.GalleryFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.example.userprofilelastlogin.ui.slideshow.SlideshowFragment"
+        android:name="com.example.userprofilelastlogin.ui.Contact_Us.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
 </navigation>
