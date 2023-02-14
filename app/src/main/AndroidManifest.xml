@@ -15,6 +15,9 @@
         android:theme="@style/Theme.UserProfileLastLogin"
         tools:targetApi="33">
         <activity
+            android:name=".ServiceEngineerInfoActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProfileActivity"
             android:exported="false" />
         <activity

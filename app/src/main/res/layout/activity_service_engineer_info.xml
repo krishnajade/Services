@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ServiceEngineerInfoActivity">
+
+    <TextView
+        android:id="@+id/residential_address_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Residential Address:"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/residential_address_display"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="123 Main Street, Anytown, USA"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/residential_address_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/residential_address_label"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/permanent_address_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Permanent Address:"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/residential_address_label"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/permanent_address_display"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="456 Oak Street, Anytown, USA"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/permanent_address_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/permanent_address_label"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/city_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="City:"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/permanent_address_label"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/city_display"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Anytown"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/city_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/city_label"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/state_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="State:"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/city_label"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/state_display"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Anystate"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/state_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/state_label"
+        android:padding="16dp"/>
+    <TextView
+        android:id="@+id/aadhar_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aadhar:"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/state_label"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/aadhar_display"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="123659451236"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/aadhar_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/aadhar_label"
+        android:padding="16dp"/>
+    <TextView
+        android:id="@+id/pan_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PAN:"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aadhar_label"
+        android:padding="16dp"/>
+    <TextView
+        android:id="@+id/pan_display"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="AZAPJ9884A"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/pan_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/pan_label"
+        android:padding="16dp"/>
+    <TextView
+        android:id="@+id/qualification_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Qualification:"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pan_label"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/qualification_display"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="B.A."
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/qualification_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/qualification_label"
+        android:padding="16dp"/>
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="134dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="183dp"
+        android:layout_marginBottom="248dp"
+        android:text="Submit"
+        android:onClick="submitForm"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/qualification_label" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

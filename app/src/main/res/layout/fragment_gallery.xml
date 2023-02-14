@@ -1,194 +1,234 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="5dp">
+
+    <TextView
+        android:paddingTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Residential Address"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        />
 
     <EditText
         android:id="@+id/residential_address"
-        android:layout_width="350dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="6dp"
-        android:autofillHints="postalAddress"
-        android:hint="@string/residential_address"
-        android:inputType="textMultiLine"
-        android:maxLines="5"
-        android:minLines="1"
-        android:scrollbarStyle="insideInset"
-        android:scrollbars="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:height="48dp"
+        android:hint="Enter Residential Address"
+        android:minLines="2"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Permanent Address"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:paddingTop="16dp"/>
 
     <EditText
         android:id="@+id/permanent_address"
-        android:layout_width="350dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="64dp"
-        android:autofillHints="postalAddress"
-        android:hint="@string/permanent_address"
-        android:inputType="textMultiLine"
-        android:maxLines="5"
-        android:minLines="1"
-        android:scrollbarStyle="insideInset"
-        android:scrollbars="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:height="48dp"
+        android:hint="Enter Permanent Address"
+        android:minLines="2"/>
 
-    <EditText
-        android:id="@+id/city"
-        android:layout_width="350dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="45dp"
-        android:autofillHints="name"
-        android:hint="@string/city"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.174" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="15dp">
 
-    <!--    <ImageView-->
-<!--        android:id="@+id/aadhar_image_view"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:contentDescription="Aadhar Image"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent" />-->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
 
-    <EditText
-        android:id="@+id/state"
-        android:layout_width="350dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="45dp"
-        android:autofillHints="name"
-        android:hint="@string/state"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.244" />
+            android:text="City"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/aadhar_number_edit_text"
-        android:layout_width="350dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="456dp"
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="State"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-        android:autofillHints="aadharcardnumber"
-        android:hint="@string/enter_your_aadhar_number"
-        android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.262"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/state"
-        app:layout_constraintVertical_bias="0.0" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/upload_aadhar_button"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="15dp">
+
+        <EditText
+            android:id="@+id/city"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:height="48dp"
+            android:layout_weight="1"
+            android:hint="Enter City" />
+
+        <EditText
+            android:id="@+id/state"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:height="48dp"
+            android:layout_weight="1"
+            android:hint="Enter State" />
+
+    </LinearLayout>
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="235dp"
-        android:layout_marginBottom="320dp"
-        android:text="@string/upload_aadhar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aadhar_number_edit_text"
-        app:layout_constraintVertical_bias="0.045" />
+        android:text="Aadhar Number"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/pancard_number_edit_text"
-        android:layout_width="350dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <EditText
+            android:id="@+id/aadhar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:height="48dp"
+            android:hint="Aadhar Number" />
+        <TextView
+            android:id="@+id/aadhar_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No file chosen"
+            android:textColor="#000000"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp" />
+
+        <Button
+            android:id="@+id/upload_aadhar_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CHOOSE"
+            android:layout_marginEnd="5dp"
+            android:textColor="#ffffff"
+            android:background="#0000FF"
+            android:layout_marginStart="16dp" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/textView_panCardNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PAN Card Number:"
+        android:textSize="20sp"
+
+        android:layout_marginTop="6dp"
+         />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <EditText
+            android:id="@+id/pan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:height="48dp"
+            android:hint="Pan Number" />
+        <TextView
+            android:id="@+id/pancard_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No file chosen"
+            android:textColor="#000000"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp" />
+
+        <Button
+            android:id="@+id/upload_pancard_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CHOOSE"
+            android:layout_marginEnd="5dp"
+            android:textColor="#ffffff"
+            android:background="#0000FF"
+            android:layout_marginStart="16dp" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/text_educational_certificate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Educational Certificate"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="20dp">
+
+        <Spinner
+            android:id="@+id/spinner_qualification"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:entries="@array/qualifications_array"
+            android:layout_below="@+id/text_educational_certificate" />
+        <EditText
+            android:id="@+id/edit_text_other_qualification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter other qualification"
+            android:visibility="gone" />
+        <TextView
+            android:id="@+id/certificate_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No file chosen"
+            android:textColor="#000000"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp" />
+
+        <Button
+            android:id="@+id/upload_certificate_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CHOOSE"
+
+            android:textColor="#ffffff"
+            android:background="#0000FF"
+
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_marginStart="15dp"
 
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="356dp"
-        android:hint="@string/enter_your_pancard_number"
-        android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/state"
-        app:layout_constraintVertical_bias="1.0"
-        android:autofillHints="" />
+        android:text="Submit"
+        android:textColor="#ffffff"
+        android:background="#0000FF"
 
-<!--    <ImageView-->
-<!--        android:id="@+id/pancard_image_view"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:contentDescription="Pancard Image"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent" />-->
+        android:layout_marginStart="150dp"
+        android:layout_marginEnd="16dp" />
 
-    <Button
-        android:id="@+id/upload_pancard_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/upload_pancard"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="235dp"
-        android:layout_marginBottom="296dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pancard_number_edit_text" />
 
-<!--    <ImageView-->
-<!--        android:id="@+id/certificate_image_view"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:contentDescription="Certificate Image"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent" />-->
-
-    <Button
-        android:id="@+id/upload_certificate_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="235dp"
-        android:layout_marginBottom="26dp"
-        android:text="@string/upload_education_certificate"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.217"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pancard_number_edit_text"
-        app:layout_constraintVertical_bias="0.177" />
-    <Button
-        android:id="@+id/loginbutton"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:text="@string/submit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.01"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.75" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

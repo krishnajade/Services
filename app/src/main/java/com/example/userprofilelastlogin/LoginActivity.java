@@ -20,10 +20,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
-
     private EditText mUsernameEditText;
     private EditText mPasswordEditText;
-
 
     public boolean isNetworkConnected() {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -71,9 +69,7 @@ public class LoginActivity extends AppCompatActivity {
                     boolean condition1 = mUsernameEditText.getText().toString().equals(username);
                     boolean condition2 =  mPasswordEditText.getText().toString().equals(password);
                     boolean condition3= isNetworkConnected();
-
                     if(condition3 ){
-
                             if ( condition1 && condition2 ) {
                                 Intent intent=new Intent(getApplicationContext(),UserProfileActivity.class);
                                 startActivity(intent);
@@ -108,11 +104,8 @@ public class LoginActivity extends AppCompatActivity {
             Intent intent=new Intent(getApplicationContext(),SignUpActivity.class);
             startActivity(intent);
             finish();
-
         });
     }
     public void onCheckboxClicked(View view) {
     }
-
-
 }

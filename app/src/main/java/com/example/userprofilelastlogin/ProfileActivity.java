@@ -16,7 +16,6 @@ public class ProfileActivity extends AppCompatActivity {
         TextView emailTextView = findViewById(R.id.emailValue);
         TextView contactNumberTextView = findViewById(R.id.contactNumberValue);
         TextView passwordTextView = findViewById(R.id.passwordValue);
-        TextView genderTextView = findViewById(R.id.genderValue);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -24,7 +23,6 @@ public class ProfileActivity extends AppCompatActivity {
             emailTextView.setText(extras.getString("email"));
             contactNumberTextView.setText(extras.getString("contactNumber"));
             passwordTextView.setText(extras.getString("password"));
-            genderTextView.setText(extras.getString("gender"));
         }
     }
 }

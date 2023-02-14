@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="qualifications_array">
+        <item> (B.Sc.)</item>
+        <item> (B.A.)</item>
+        <item>(B.Com)</item>
+        <item>Other</item>
+    </string-array>
+</resources>
