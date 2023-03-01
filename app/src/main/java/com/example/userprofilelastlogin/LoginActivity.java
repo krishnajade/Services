@@ -2,9 +2,7 @@ package com.example.userprofilelastlogin;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.LocationManager;
@@ -22,7 +20,6 @@ import android.widget.Toast;
 public class LoginActivity extends AppCompatActivity {
     private EditText mUsernameEditText;
     private EditText mPasswordEditText;
-
     public boolean isNetworkConnected() {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
@@ -42,17 +39,13 @@ public class LoginActivity extends AppCompatActivity {
             alertDialog.show();
         }
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         mUsernameEditText = findViewById(R.id.username);
         mPasswordEditText = findViewById(R.id.password);
-
         enableLocation();
-
         //Logic to see if checkbox is checked
         CheckBox checkBox = findViewById(R.id.checkbox_terms);
         checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -63,7 +56,6 @@ public class LoginActivity extends AppCompatActivity {
                 Button loginButton = findViewById(R.id.login_button);
                 loginButton.setOnClickListener(view -> {
                     // retrieve the username and password from the text fields
-
                     String username="user";
                     String password="password";
                     boolean condition1 = mUsernameEditText.getText().toString().equals(username);

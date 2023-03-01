@@ -14,12 +14,12 @@
     <string name="Contact_us_form_title">Please fill out the form below and we will get back to you as soon as possible</string>
     <string name="or">OR</string>
     <string name="welcome_back">Welcome Back</string>
-    <string name="mobile_no_email_id_user_id">Mobile No/Email Id/User Id</string>
+    <string name="mobile_no_email_id_user_id">Email address </string>
     <string name="password">Password</string>
     <string name="accept_terms_amp_conditions"><![CDATA[Accept terms & conditions]]></string>
-    <string name="login">LOGIN</string>
+    <string name="login">Login</string>
     <string name="login_with_otp">LOGIN WITH OTP</string>
-    <string name="don_t_have_account_createaccount">Don\'t have account? Createaccount</string>
+    <string name="don_t_have_account_createaccount"> Createaccount</string>
     <string name="forgot_password">Forgot Password</string>
     <string name="sign_up">Sign Up</string>
     <string name="username">Username</string>
