@@ -1,10 +1,7 @@
 package com.example.userprofilelastlogin;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -16,6 +13,19 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
+
+import com.example.userprofilelastlogin.models.LoginResponse;
+import com.example.userprofilelastlogin.services.LoginService;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText mUsernameEditText;
@@ -54,36 +64,87 @@ public class LoginActivity extends AppCompatActivity {
                 // Add your logic here
                 //Login button functionality
                 Button loginButton = findViewById(R.id.login_button);
-                loginButton.setOnClickListener(view -> {
-                    // retrieve the username and password from the text fields
-                    String username="user";
-                    String password="password";
-                    boolean condition1 = mUsernameEditText.getText().toString().equals(username);
-                    boolean condition2 =  mPasswordEditText.getText().toString().equals(password);
+//                loginButton.setOnClickListener(view -> {
+//                    // retrieve the username and password from the text fields
+//                    String username="user";
+//                    String password="password";
+//                    boolean condition1 = mUsernameEditText.getText().toString().equals(username);
+//                    boolean condition2 =  mPasswordEditText.getText().toString().equals(password);
+//                    boolean condition3= isNetworkConnected();
+//                    if(condition3 ){
+//                            if ( condition1 && condition2 ) {
+//                                Intent intent=new Intent(getApplicationContext(),UserProfileActivity.class);
+//                                startActivity(intent);
+//                                finish();
+//                            }
+//                            else {
+//                                String toastMessage = "Wrong Username or Password ";
+//                                Toast.makeText(getApplicationContext(), toastMessage, Toast.LENGTH_SHORT).show();
+//                            }
+//                    }
+//                    else{
+//                        String toastMessage = "You are not connected to network ";
+//                        Toast.makeText(getApplicationContext(), toastMessage, Toast.LENGTH_SHORT).show();
+//                    }
+//                    SharedPreferences sharedPref = getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
+//                    SharedPreferences.Editor editor = sharedPref.edit();
+//
+
+                loginButton.setOnClickListener(v -> {
+                    String username = mUsernameEditText.getText().toString();
+                    String password = mPasswordEditText.getText().toString();
+
                     boolean condition3= isNetworkConnected();
                     if(condition3 ){
-                            if ( condition1 && condition2 ) {
-                                Intent intent=new Intent(getApplicationContext(),UserProfileActivity.class);
-                                startActivity(intent);
-                                finish();
-                            }
-                            else {
-                                String toastMessage = "Wrong Username or Password ";
-                                Toast.makeText(getApplicationContext(), toastMessage, Toast.LENGTH_SHORT).show();
-                            }
-                    }
-                    else{
-                        String toastMessage = "You are not connected to network ";
-                        Toast.makeText(getApplicationContext(), toastMessage, Toast.LENGTH_SHORT).show();
-                    }
-                    SharedPreferences sharedPref = getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPref.edit();
 
-                    // Store the current time as the last login time
-                    long currentTime = System.currentTimeMillis();
-                    editor.putLong("last_login", currentTime);
-                    editor.apply();
+                    if (username.isEmpty() || password.isEmpty()) {
+                        Toast.makeText(getApplicationContext(), "Please enter both username and password", Toast.LENGTH_SHORT).show();
+                    } else {
+                        // Create a Retrofit instance
+                        Retrofit retrofit = new Retrofit.Builder()
+                                .baseUrl("https://trifrnd.com/TestServer/API/Second/")
+                                .addConverterFactory(GsonConverterFactory.create())
+                                .build();
+
+                        // Create a LoginService instance using the Retrofit instance
+                        LoginService service = retrofit.create(LoginService.class);
+
+                        // Call the login API with the given username and password
+                        Call<LoginResponse> call = service.login(username, password);
+
+                        // Handle the response
+                        call.enqueue(new Callback<LoginResponse>() {
+                            @Override
+                            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                                if (response.isSuccessful()) {
+                                    LoginResponse loginResponse = response.body();
+                                    if (loginResponse.isSuccess()) {
+                                        // Login successful, start the DashboardActivity
+                                        Intent intent = new Intent(getApplicationContext(), UserProfileActivity.class);
+                                        startActivity(intent);
+                                        finish();
+                                    } else {
+                                        // Login failed, display an error message
+                                        String errorMessage = "Invalid username or password";
+                                        Toast.makeText(getApplicationContext(), errorMessage, Toast.LENGTH_SHORT).show();
+                                    }
+                                } else {
+                                    // Login failed, display an error message
+                                    String errorMessage = "Unable to login. Please try again later";
+                                    Toast.makeText(getApplicationContext(), errorMessage, Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                            @Override
+                            public void onFailure(Call<LoginResponse> call, Throwable t) {
+                                // Login failed, display an error message
+                                String errorMessage = "Unable to connect to server. Please try again later";
+                                Toast.makeText(getApplicationContext(), errorMessage, Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }}
                 });
+
+
             } else {
                 // The check box is not checked
                 // Add your logic here
