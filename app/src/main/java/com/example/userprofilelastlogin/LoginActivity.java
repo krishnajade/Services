@@ -13,19 +13,18 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
-
-import com.example.userprofilelastlogin.models.LoginResponse;
-import com.example.userprofilelastlogin.services.LoginService;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.userprofilelastlogin.models.LoginResponse;
+import com.example.userprofilelastlogin.services.LoginService;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText mUsernameEditText;
@@ -115,9 +114,10 @@ public class LoginActivity extends AppCompatActivity {
                         // Handle the response
                         call.enqueue(new Callback<LoginResponse>() {
                             @Override
-                            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                            public void onResponse(@NonNull Call<LoginResponse> call, @NonNull Response<LoginResponse> response) {
                                 if (response.isSuccessful()) {
                                     LoginResponse loginResponse = response.body();
+                                    assert loginResponse != null;
                                     if (loginResponse.isSuccess()) {
                                         // Login successful, start the DashboardActivity
                                         Intent intent = new Intent(getApplicationContext(), UserProfileActivity.class);
@@ -144,7 +144,6 @@ public class LoginActivity extends AppCompatActivity {
                     }}
                 });
 
-
             } else {
                 // The check box is not checked
                 // Add your logic here
@@ -154,7 +153,7 @@ public class LoginActivity extends AppCompatActivity {
     );
         TextView signup = findViewById(R.id.dont_have_account);
         signup.setOnClickListener(view->{
-            Intent intent=new Intent(getApplicationContext(),SignUpActivity.class);
+            Intent intent=new Intent(getApplicationContext(),SignupActivity.class);
             startActivity(intent);
             finish();
         });

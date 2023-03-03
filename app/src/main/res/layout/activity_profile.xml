@@ -44,12 +44,12 @@
         android:id="@+id/contactNumberLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Contact Number:"
+        android:text="Gender:"
         android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/contactNumberValue"
+        android:id="@+id/genderValue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp" />
